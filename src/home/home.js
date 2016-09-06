@@ -1,6 +1,19 @@
 import React from 'react';
+import axios from 'axios'
 
 export default class Home extends React.Component {
+  componentDidMount() {
+    axios.get("http://localhost:12306/api/marketable-products/ZYZG")
+      .then((data)=>{
+        console.log('success');
+        console.log(data)
+      })
+      .catch((e)=> {
+        console.log('error')
+        console.log(e)
+      })
+  }
+
   render () {
     return <div className="container">
         <h1>React ES6 Starter</h1>
