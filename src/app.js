@@ -1,4 +1,5 @@
 import React from 'react/addons';
-import Home from './home/home';
+import FilterableProductTable from './FilterableProductTable/FilterableProductTable'
+import PRODUCTS from './PRODUCTS'
 
-React.render(<Home />, document.body);
+React.render(<FilterableProductTable products={PRODUCTS} />, document.body);
