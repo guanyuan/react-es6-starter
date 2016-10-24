@@ -1,14 +1,20 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
 
   //  Defines the entrypoint of our application.
-  entry: path.resolve(__dirname, '../src/app.js'),
+  entry: {
+    app: [path.resolve(__dirname, '../src/app.js')]
+  },
+
+  devServer: { inline: true },
 
   //  Bundle to a ./build/public/bundle.js file.
   output: {
     path: path.resolve(__dirname, '../build/public'),
+    publicPath: "/",
     filename: 'bundle.js'
   },
 
@@ -33,6 +39,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/index.html'),
       inject: 'body' // Inject webpack scripts into the body.
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
