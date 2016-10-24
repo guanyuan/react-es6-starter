@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "axios": "^0.14.0",
-    "react": "0.x.x",
     "webpack": "^1.12.1"
   },
   "devDependencies": {

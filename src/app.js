@@ -1,5 +1,6 @@
-import React from 'react/addons';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import FilterableProductTable from './FilterableProductTable/FilterableProductTable'
 import PRODUCTS from './PRODUCTS'
 
-React.render(<FilterableProductTable products={PRODUCTS} />, document.body);
+ReactDOM.render(<FilterableProductTable products={PRODUCTS} />, document.getElementById("root"));
